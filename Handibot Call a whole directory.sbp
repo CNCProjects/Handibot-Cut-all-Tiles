@@ -1,0 +1,58 @@
+'Example of triggering an action, a move (or PartFile start), with an Input Switch (a momentary contact)
+
+' The following licensing information must accompany this file at all times.
+
+
+' ********** Licensing Information **********
+
+' Copyright 2001 ShopBot Tools
+'
+' We encourage ShopBot users to modify this part file to suit their own needs and have licensed it 
+' under the Creative Commons Atribution 3.0 license.  This license allows you to copy, distribute, 
+' or modify the file with certain restrictions. Any other use requires permission from ShopBot Tools.
+'
+' A simplified explanantion of this license is available at  
+' http://creativecommons.org/licenses/by/3.0/us/ 
+'
+' and the full legal code can be found at 
+' http://creativecommons.org/licenses/by/3.0/us/legalcode
+
+' We encourage you to read this legal code before modifying or distributing  this file, 
+' ESPECIALLY sections 5 and 6 that cover warranties and liability.
+'
+' If you plan on distributing your new version, you must also state in the header of your file that it
+' is a modification of a file supplied by Shopbot Tools, supply information on finding the original file, 
+' and rename the file to make it clear to the user that it is a modified version. 
+
+'
+' ********** End Licensing Information **********
+
+' User takes responsibility for the effects and outcomes of the use of this program, and ShopBot Tools assumes
+' no liability it's use.
+
+	PRINT "
+	INPUT "This program will cut all ShopBot files in this directory that are tiled files from VCarve" &nothing
+	
+
+&ini_SW = %(24)                      'Save the initial value of the delay time before motion starts; so it can be restore later is used
+
+Action_Sequence:
+	FP T*.spb
+
+	SW, &ini_SW                      'After Action, restore initial delay time (not needed is delay not modified) 
+
+IF %(51) = 1 THEN GOTO Switch_ERROR  'Test to make sure switch is not already closed ...
+
+'                                    'Next line is the message you want to display while waiting for Input Switch
+'Press the GREEN button to cut all tiles
+PAUSE UNTIL 1,1                      'This is Programming Instruction that Waits for Input Switch (#1 going ON)
+SW,0                                 'This Command reduces the delay to action to 0 sec
+GOTO Action_Sequence
+END
+
+
+Switch_ERROR:
+'SWITCH MALFUNCTION  -- CLEAR TO CONTINUE
+PAUSE
+IF %(51) = 0 THEN GOTO Action_Sequence
+END
