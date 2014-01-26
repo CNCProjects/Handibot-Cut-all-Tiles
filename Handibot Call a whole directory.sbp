@@ -32,12 +32,21 @@
 
 	PRINT "
 	INPUT "This program will cut all ShopBot files in this directory that are tiled files from VCarve" &nothing
+
+	PRINT "
+	INPUT "You have X tiles to cut" &tilecount
+
+	PRINT "
+	INPUT "Which Tile do you want to start with?" &tilestart
 	
 
 &ini_SW = %(24)                      'Save the initial value of the delay time before motion starts; so it can be restore later is used
 
 Action_Sequence:
-	FP T*.spb
+	PRINT "Cutting tile X"
+	FP T*.spb							'cut first file
+	PAUSE UNTIL 1,1					'wait for user to hit GO for the next tile
+
 
 	SW, &ini_SW                      'After Action, restore initial delay time (not needed is delay not modified) 
 
