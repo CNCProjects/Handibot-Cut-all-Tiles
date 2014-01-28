@@ -1,67 +1,311 @@
-'Example of triggering an action, a move (or PartFile start), with an Input Switch (a momentary contact)
+'This file can cut up to 50 tiles
+'You need to set your parts directory to the list of tiles.
+'The tiles must be named "T1_.sbp" "T2_sbp" etc
+'You can easily do this from VCarve when you save your file, just delete the file name when you save your tiled toolpaths
+'If you need to start in the middle of a cut, you can do that with the GOTO command below.
 
-' The following licensing information must accompany this file at all times.
-
-
-' ********** Licensing Information **********
-
-' Copyright 2001 ShopBot Tools
-'
-' We encourage ShopBot users to modify this part file to suit their own needs and have licensed it 
-' under the Creative Commons Atribution 3.0 license.  This license allows you to copy, distribute, 
-' or modify the file with certain restrictions. Any other use requires permission from ShopBot Tools.
-'
-' A simplified explanantion of this license is available at  
-' http://creativecommons.org/licenses/by/3.0/us/ 
-'
-' and the full legal code can be found at 
-' http://creativecommons.org/licenses/by/3.0/us/legalcode
-
-' We encourage you to read this legal code before modifying or distributing  this file, 
-' ESPECIALLY sections 5 and 6 that cover warranties and liability.
-'
-' If you plan on distributing your new version, you must also state in the header of your file that it
-' is a modification of a file supplied by Shopbot Tools, supply information on finding the original file, 
-' and rename the file to make it clear to the user that it is a modified version. 
-
-'
-' ********** End Licensing Information **********
-
-' User takes responsibility for the effects and outcomes of the use of this program, and ShopBot Tools assumes
-' no liability it's use.
-
-	PRINT "
-	INPUT "This program will cut all ShopBot files in this directory that are tiled files from VCarve" &nothing
-
-	PRINT "
-	INPUT "You have X tiles to cut" &tilecount
-
-	PRINT "
-	INPUT "Which Tile do you want to start with?" &tilestart
 	
+	PRINT "This program will cut all ShopBot files in this directory that are tiled files from VCarve"
+	MSGBOX ( Homing Tool. Make sure you have set your Z 0", 0, title text
+	FP C:\sbparts\xyzero.sbp
 
-&ini_SW = %(24)                      'Save the initial value of the delay time before motion starts; so it can be restore later is used
+	'GOTO T2 Use this to skip to a tile number if you got out of sync during your cuts
+T1:
+	PRINT "Cutting tile T1"
+	MSGBOX ( Cutting Tile TI, 0,Punch it Chewie!
+	FP T1_.sbp							
+	PAUSE UNTIL 1,1
+	
+T2:
+	PRINT "Cutting tile T2"
+	MSGBOX ( Cutting Tile T2, 0, Punch It Chewie!
+	FP T2_.sbp							
+	PAUSE UNTIL 1,1		
 
-Action_Sequence:
-	PRINT "Cutting tile X"
-	FP T*.spb							'cut first file
-	PAUSE UNTIL 1,1					'wait for user to hit GO for the next tile
+T3:
+	PRINT "Cutting tile T3"
+	MSGBOX ( Cutting Tile T3, 0, Punch It Chewie!
+	FP T3_.sbp							
+	PAUSE UNTIL 1,1		
 
+T4:
+	PRINT "Cutting tile T4"
+	MSGBOX ( Cutting Tile T4, 0, Punch It Chewie!
+	FP T4_.sbp							
+	PAUSE UNTIL 1,1		
 
-	SW, &ini_SW                      'After Action, restore initial delay time (not needed is delay not modified) 
+T5:
+	PRINT "Cutting tile T5"
+	MSGBOX ( Cutting Tile T5, 0, Punch It Chewie!
+	FP T5_.sbp							
+	PAUSE UNTIL 1,1		
 
-IF %(51) = 1 THEN GOTO Switch_ERROR  'Test to make sure switch is not already closed ...
+T6:
+	PRINT "Cutting tile T6"
+	MSGBOX ( Cutting Tile T6, 0, Punch It Chewie!
+	FP T6_.sbp							
+	PAUSE UNTIL 1,1		
 
-'                                    'Next line is the message you want to display while waiting for Input Switch
-'Press the GREEN button to cut all tiles
-PAUSE UNTIL 1,1                      'This is Programming Instruction that Waits for Input Switch (#1 going ON)
-SW,0                                 'This Command reduces the delay to action to 0 sec
-GOTO Action_Sequence
-END
+T7:
+	PRINT "Cutting tile T7"
+	MSGBOX ( Cutting Tile T7, 0, Punch It Chewie!
+	FP T7_.sbp							
+	PAUSE UNTIL 1,1		
 
+T8:
+	PRINT "Cutting tile T8"
+	MSGBOX ( Cutting Tile T8, 0, Punch It Chewie!
+	FP T8_.sbp							
+	PAUSE UNTIL 1,1		
 
-Switch_ERROR:
-'SWITCH MALFUNCTION  -- CLEAR TO CONTINUE
-PAUSE
-IF %(51) = 0 THEN GOTO Action_Sequence
-END
+T9:
+	PRINT "Cutting tile T9"
+	MSGBOX ( Cutting Tile T9, 0, Punch It Chewie!
+	FP T9_.sbp							
+	PAUSE UNTIL 1,1		
+
+T10:
+	PRINT "Cutting tile T10"
+	MSGBOX ( Cutting Tile T10, 0, Punch It Chewie!
+	FP T10_.sbp							
+	PAUSE UNTIL 1,1		
+
+T11:
+	PRINT "Cutting tile T11"
+	MSGBOX ( Cutting Tile T11, 0, Punch It Chewie!
+	FP T11_.sbp							
+	PAUSE UNTIL 1,1		
+
+T12:
+	PRINT "Cutting tile T12"
+	MSGBOX ( Cutting Tile T12, 0, Punch It Chewie!
+	FP T12_.sbp							
+	PAUSE UNTIL 1,1		
+
+T13:
+	PRINT "Cutting tile T13"
+	MSGBOX ( Cutting Tile T13, 0, Punch It Chewie!
+	FP T13_.sbp							
+	PAUSE UNTIL 1,1		
+
+T14:
+	PRINT "Cutting tile T14"
+	MSGBOX ( Cutting Tile T14, 0, Punch It Chewie!
+	FP T14_.sbp							
+	PAUSE UNTIL 1,1		
+
+T15:
+	PRINT "Cutting tile T15"
+	MSGBOX ( Cutting Tile T15, 0, Punch It Chewie!
+	FP T15_.sbp							
+	PAUSE UNTIL 1,1		
+
+T16:
+	PRINT "Cutting tile T16"
+	MSGBOX ( Cutting Tile T16, 0, Punch It Chewie!
+	FP T16_.sbp							
+	PAUSE UNTIL 1,1		
+
+T17:
+	PRINT "Cutting tile T17"
+	MSGBOX ( Cutting Tile T17, 0, Punch It Chewie!
+	FP T17_.sbp							
+	PAUSE UNTIL 1,1		
+
+T18:
+	PRINT "Cutting tile T18"
+	MSGBOX ( Cutting Tile T18, 0, Punch It Chewie!
+	FP T18_.sbp							
+	PAUSE UNTIL 1,1		
+
+T19:
+	PRINT "Cutting tile T19"
+	MSGBOX ( Cutting Tile T19, 0, Punch It Chewie!
+	FP T19_.sbp							
+	PAUSE UNTIL 1,1		
+
+T20:
+	PRINT "Cutting tile T20"
+	MSGBOX ( Cutting Tile T20, 0, Punch It Chewie!
+	FP T20_.sbp							
+	PAUSE UNTIL 1,1		
+
+T21:
+	PRINT "Cutting tile T21"
+	MSGBOX ( Cutting Tile T21, 0, Punch It Chewie!
+	FP T21_.sbp							
+	PAUSE UNTIL 1,1		
+
+T22:
+	PRINT "Cutting tile T22"
+	MSGBOX ( Cutting Tile T22, 0, Punch It Chewie!
+	FP T22_.sbp							
+	PAUSE UNTIL 1,1		
+
+T23:
+	PRINT "Cutting tile T23"
+	MSGBOX ( Cutting Tile T23, 0, Punch It Chewie!
+	FP T23_.sbp							
+	PAUSE UNTIL 1,1		
+
+T24:
+	PRINT "Cutting tile T24"
+	MSGBOX ( Cutting Tile T24, 0, Punch It Chewie!
+	FP T24_.sbp							
+	PAUSE UNTIL 1,1		
+
+T25:
+	PRINT "Cutting tile T25"
+	MSGBOX ( Cutting Tile T25, 0, Punch It Chewie!
+	FP T25_.sbp							
+	PAUSE UNTIL 1,1		
+
+T26:
+	PRINT "Cutting tile T26"
+	MSGBOX ( Cutting Tile T26, 0, Punch It Chewie!
+	FP T26_.sbp							
+	PAUSE UNTIL 1,1		
+
+T27:
+	PRINT "Cutting tile T27"
+	MSGBOX ( Cutting Tile T27, 0, Punch It Chewie!
+	FP T27_.sbp							
+	PAUSE UNTIL 1,1		
+
+T28:
+	PRINT "Cutting tile T28"
+	MSGBOX ( Cutting Tile T28, 0, Punch It Chewie!
+	FP T28_.sbp							
+	PAUSE UNTIL 1,1		
+
+T29:
+	PRINT "Cutting tile T29"
+	MSGBOX ( Cutting Tile T29, 0, Punch It Chewie!
+	FP T29_.sbp							
+	PAUSE UNTIL 1,1		
+
+T30:
+	PRINT "Cutting tile T30"
+	MSGBOX ( Cutting Tile T30, 0, Punch It Chewie!
+	FP T30_.sbp							
+	PAUSE UNTIL 1,1		
+
+T31:
+	PRINT "Cutting tile T31"
+	MSGBOX ( Cutting Tile T31, 0, Punch It Chewie!
+	FP T31_.sbp							
+	PAUSE UNTIL 1,1		
+
+T32:
+	PRINT "Cutting tile T32"
+	MSGBOX ( Cutting Tile T32, 0, Punch It Chewie!
+	FP T32_.sbp							
+	PAUSE UNTIL 1,1		
+
+T33:
+	PRINT "Cutting tile T33"
+	MSGBOX ( Cutting Tile T33, 0, Punch It Chewie!
+	FP T33_.sbp							
+	PAUSE UNTIL 1,1		
+
+T34:
+	PRINT "Cutting tile T34"
+	MSGBOX ( Cutting Tile T34, 0, Punch It Chewie!
+	FP T34_.sbp							
+	PAUSE UNTIL 1,1		
+
+T35:
+	PRINT "Cutting tile T35"
+	MSGBOX ( Cutting Tile T35, 0, Punch It Chewie!
+	FP T35_.sbp							
+	PAUSE UNTIL 1,1		
+
+T36:
+	PRINT "Cutting tile T36"
+	MSGBOX ( Cutting Tile T36, 0, Punch It Chewie!
+	FP T36_.sbp							
+	PAUSE UNTIL 1,1		
+
+T37:
+	PRINT "Cutting tile T37"
+	MSGBOX ( Cutting Tile T37, 0, Punch It Chewie!
+	FP T37_.sbp							
+	PAUSE UNTIL 1,1		
+
+T38:
+	PRINT "Cutting tile T38"
+	MSGBOX ( Cutting Tile T38, 0, Punch It Chewie!
+	FP T38_.sbp							
+	PAUSE UNTIL 1,1		
+
+T39:
+	PRINT "Cutting tile T39"
+	MSGBOX ( Cutting Tile T39, 0, Punch It Chewie!
+	FP T39_.sbp							
+	PAUSE UNTIL 1,1		
+
+T40:
+	PRINT "Cutting tile T40"
+	MSGBOX ( Cutting Tile T40, 0, Punch It Chewie!
+	FP T40_.sbp							
+	PAUSE UNTIL 1,1		
+
+T41:
+	PRINT "Cutting tile T41"
+	MSGBOX ( Cutting Tile T41, 0, Punch It Chewie!
+	FP T41_.sbp							
+	PAUSE UNTIL 1,1		
+
+T42:
+	PRINT "Cutting tile T42"
+	MSGBOX ( Cutting Tile T42, 0, Punch It Chewie!
+	FP T42_.sbp							
+	PAUSE UNTIL 1,1		
+
+T43:
+	PRINT "Cutting tile T43"
+	MSGBOX ( Cutting Tile T43, 0, Punch It Chewie!
+	FP T43_.sbp							
+	PAUSE UNTIL 1,1		
+
+T44:
+	PRINT "Cutting tile T44"
+	MSGBOX ( Cutting Tile T44, 0, Punch It Chewie!
+	FP T44_.sbp							
+	PAUSE UNTIL 1,1		
+
+T45:
+	PRINT "Cutting tile T45"
+	MSGBOX ( Cutting Tile T45, 0, Punch It Chewie!
+	FP T45_.sbp							
+	PAUSE UNTIL 1,1	
+
+T46:
+	PRINT "Cutting tile T46"
+	MSGBOX ( Cutting Tile T46, 0, Punch It Chewie!
+	FP T46_.sbp							
+	PAUSE UNTIL 1,1		
+
+T47:
+	PRINT "Cutting tile T47"
+	MSGBOX ( Cutting Tile T47, 0, Punch It Chewie!
+	FP T47_.sbp							
+	PAUSE UNTIL 1,1		
+
+T48:
+	PRINT "Cutting tile T48"
+	MSGBOX ( Cutting Tile T48, 0, Punch It Chewie!
+	FP T48_.sbp							
+	PAUSE UNTIL 1,1		
+
+T49:
+	PRINT "Cutting tile T49"
+	MSGBOX ( Cutting Tile T49, 0, Punch It Chewie!
+	FP T49_.sbp							
+	PAUSE UNTIL 1,1		
+
+T50:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1		
