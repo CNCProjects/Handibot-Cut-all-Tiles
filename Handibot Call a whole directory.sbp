@@ -309,3 +309,66 @@ T50:
 	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
 	FP T50_.sbp							
 	PAUSE UNTIL 1,1		
+
+T52:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T53:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T54:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T55:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T56:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T57:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T58:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T59:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T60:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+T61:
+	PRINT "Cutting tile T50"
+	MSGBOX ( Cutting Tile T50, 0, Punch It Chewie!
+	FP T50_.sbp							
+	PAUSE UNTIL 1,1	
+	
+		
+	
