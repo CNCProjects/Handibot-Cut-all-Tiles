@@ -5,6 +5,16 @@ This is a ShopBot file that will allow your Handibot to cut one tile after anoth
 
 Here's how it works:
 
+Video:
+
+http://www.youtube.com/watch?v=mipSuTBhoPc
+
+Forum Thread:
+
+https://handibot.com/forum/read.php?2,308
+
+Written Instructions:
+
 Go to VCarve and make a tiled toolpath. Save that toolpath with no filename. VCarve will create filenames with T1_.sbp T2_.sbp etc.
 
 Drop this file from Github into the directory where you exported all of your tiles
@@ -19,3 +29,4 @@ It will pick T1, cut it, and wait for you to hit GO for the next tile, T2 It'll 
 
 
 If you get screwed up, you can uncomment the GOTO command and set it to whatever tile you left off on, because I put labels on each and every tile cutting command for that exact purpose.
+
