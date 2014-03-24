@@ -25,8 +25,12 @@ Run the "Cut all tiles file"
 
 It will open up and zero the axis by running that Zero XY SBP file
 
-It will pick T1, cut it, and wait for you to hit GO for the next tile, T2 It'll keep going to 50 tiles and then it unceremoniously ends. (or you can just quit out :)
+Then it will ask you to Zero your Z
+
+And then it will ask you which tile you'd like to start with.
+
+After each tile is done, move the machine over and hit the green button!
 
 
-If you get screwed up, you can uncomment the GOTO command and set it to whatever tile you left off on, because I put labels on each and every tile cutting command for that exact purpose.
+
 
